@@ -209,6 +209,14 @@ section h3 {
     color: #93c5fd;
 }
 
+.project-status{
+    margin-top:15px;
+    font-size:0.9rem;
+    line-height:1.5;
+    color:#94a3b8;
+    text-align:center;
+}
+
 footer {
     text-align: center;
     padding: 40px;
