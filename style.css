@@ -434,6 +434,20 @@ footer {
     font-weight: 500;
 }
 
+.email-display a{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.email-display a:visited{
+    color: inherit;
+}
+
+.email-display a:hover{
+    color: #60a5fa;
+}
+
 /* BOTÓN */
 .contact-button {
     display: inline-block;
@@ -684,5 +698,12 @@ body.light-mode .timeline-item::before {
 
 body.light-mode #theme-toggle {
     background: rgba(0,0,0,0.08);
+    color: #0f172a;
+}
+
+body.light-mode .email-display,
+body.light-mode .email-display span,
+body.light-mode .email-display a,
+body.light-mode .email-display i{
     color: #0f172a;
 }
