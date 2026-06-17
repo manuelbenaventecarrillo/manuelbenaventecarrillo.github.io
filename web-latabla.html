@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web LaTabla</title>
+    <link rel="stylesheet" href="proyecto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <button id="theme-toggle" aria-label="Cambiar tema">
+        🌙
+    </button>
+
+    <div class="container">
+
+        <a href="index.html" class="back-button">← Volver al portfolio</a>
+
+        <div class="card">
+
+
+            <h1>Web Corporativa LaTabla</h1>
+            <img src="assets/proyectos/web_latabla/proyecto_latabla.png" class="hero-project-image">
+
+            <p>
+                LaTabla es una página web corporativa desarrollada para un negocio real especializado en embutidos y
+                productos
+                gastronómicos. El objetivo del proyecto fue mejorar la presencia digital del establecimiento y ofrecer a
+                los
+                clientes una forma sencilla de conocer sus productos, ubicación e información de contacto.
+            </p>
+
+            <p>
+                La web ha sido desarrollada utilizando HTML y CSS, priorizando la simplicidad, la velocidad de carga y
+                una
+                experiencia de usuario clara y atractiva. Todo el contenido ha sido estructurado para transmitir la
+                identidad
+                del negocio y facilitar el acceso a la información más relevante.
+            </p>
+
+            <div class="feature-box">
+
+                <div class="feature-text">
+
+                    <h2>Funcionalidades principales</h2>
+
+                    <ul>
+                        <li>Página principal con información del negocio.</li>
+                        <li>Historia y presentación del establecimiento.</li>
+                        <li>Mapa interactivo con ubicación real.</li>
+                        <li>Productos destacados.</li>
+                        <li>Carta completa del local.</li>
+                        <li>Galería de imágenes de productos.</li>
+                        <li>Botón de contacto directo mediante WhatsApp.</li>
+                        <li>Diseño responsive para móviles y tablets.</li>
+                        <li>Páginas legales y políticas de privacidad.</li>
+                    </ul>
+
+                </div>
+
+                <div class="feature-image">
+
+                    <img src="assets/proyectos/web_latabla/imagen2.png"
+                        alt="Funcionalidades del sistema">
+                    <img src="assets/proyectos/web_latabla/imagen3.png"
+                        alt="Funcionalidades del sistema">
+
+                </div>
+
+            </div>
+
+            <h2>Tecnologías utilizadas</h2>
+
+            <p>
+                HTML, CSS, Responsive Design, Diseño Web, UI/UX y optimización de experiencia de usuario.
+            </p>
+
+            <h2>Objetivos del proyecto</h2>
+
+            <p>
+                El principal objetivo fue crear una web atractiva, funcional y alineada con la imagen del negocio,
+                mejorando su
+                visibilidad online y facilitando el acceso de clientes a la información, productos y servicios ofrecidos
+                por el
+                establecimiento.
+            </p>
+
+            <h2>Aprendizajes obtenidos</h2>
+
+            <p>
+                Este proyecto me permitió reforzar conocimientos de desarrollo Front-End, diseño web responsive y
+                experiencia de
+                usuario, así como trabajar sobre las necesidades reales de un negocio para transformarlas en una
+                solución
+                digital funcional.
+            </p>
+
+            <h2>Galería del proyecto</h2>
+
+            <div class="project-gallery">
+                <img src="assets/proyectos/web_latabla/proyecto_latabla.png" alt="Galería proyecto 1"
+                    class="gallery-item">
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="contact-box">
+
+        <h2>Contacto</h2>
+
+        <p>
+            Si te interesa conocer más sobre este proyecto o quieres contactar conmigo,
+            puedes hacerlo a través de cualquiera de los siguientes medios.
+        </p>
+
+        <div class="email-display">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:manuel.benavente.carrillo@gmail.com">
+                manuel.benavente.carrillo@gmail.com
+            </a>
+        </div>
+
+        <div class="email-display">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Madrid, España</span>
+        </div>
+
+        <div class="email-display">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/manuelbenaventecarrillo" target="_blank">
+                github.com/manuelbenaventecarrillo
+            </a>
+        </div>
+
+        <div class="email-display">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/manuelbenaventecarrillo" target="_blank">
+                linkedin.com/in/manuelbenaventecarrillo
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Manuel Benavente · Portfolio Profesional</p>
+    </footer>
+
+    <!-- MODAL LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <button id="close-lightbox" class="close-btn">✕</button>
+        <img id="lightbox-image" src="" alt="Imagen ampliada">
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeBtn = document.getElementById('close-lightbox');
+
+        // Tema claro/oscuro
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            toggleBtn.textContent = '☀️';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '🌙';
+            }
+        });
+
+        // Lightbox para TODAS las imágenes
+        const allImages = document.querySelectorAll('img:not(#lightbox-image)');
+
+        allImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', (e) => {
+                lightboxImage.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+
+</html>

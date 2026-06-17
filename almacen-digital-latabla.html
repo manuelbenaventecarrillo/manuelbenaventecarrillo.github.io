@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacen Digital LaTabla</title>
+
+    <link rel="stylesheet" href="proyecto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+<button id="theme-toggle" aria-label="Cambiar tema">
+    🌙
+</button>
+    <div class="container">
+
+        <a href="index.html" class="back-button">← Volver al portfolio</a>
+
+        <div class="card">
+
+            <h1>Almacén Digital LaTabla</h1>
+            <img src="assets/proyectos/almacendigital_tabla/proyecto_almacendigital_latabla.png" class="hero-project-image">
+
+            <p>
+                El Almacén Digital de LaTabla es un proyecto personal desarrollado por iniciativa propia con el objetivo
+                de digitalizar y optimizar la gestión interna del negocio familiar "LaTabla". Surge de la necesidad de
+                sustituir procesos manuales por una solución tecnológica capaz de centralizar información y mejorar la
+                eficiencia operativa del establecimiento.
+            </p>
+
+            <p>
+                La aplicación está siendo diseñada para gestionar inventario, productos, stock, movimientos de almacén y
+                ventas mediante una interfaz intuitiva y accesible. El objetivo es disponer de una herramienta que
+                permita consultar información, registrar movimientos y facilitar la toma de decisiones de forma rápida y
+                eficiente.
+            </p>
+
+            <div class="feature-box">
+
+                <div class="feature-text">
+
+                    <h2>Funcionalidades principales</h2>
+
+                    <ul>
+                        <li>Gestión digital de inventario y stock.</li>
+                        <li>Control de entradas y salidas de productos.</li>
+                        <li>Registro de movimientos de almacén.</li>
+                        <li>Base de datos centralizada.</li>
+                        <li>Consultas mediante texto y voz.</li>
+                        <li>Asistente conversacional con Inteligencia Artificial.</li>
+                        <li>Paneles de análisis y seguimiento de información.</li>
+                        <li>Optimización de procesos internos del negocio.</li>
+                    </ul>
+
+                </div>
+
+                <div class="feature-image">
+
+                    <img src="assets/proyectos/almacendigital_tabla/imagen2.png" alt="Funcionalidades del sistema">
+                    <img src="assets/proyectos/almacendigital_tabla/imagen3.png" alt="Funcionalidades del sistema">
+
+                </div>
+
+            </div>
+
+            <h2>Tecnologías utilizadas</h2>
+
+            <p>
+                JavaScript, HTML, CSS, SQL, Inteligencia Artificial, Chat IA, bases de datos, UI/UX y herramientas de
+                desarrollo asistidas por IA como Lovable.
+            </p>
+
+            <h2>Motivación del proyecto</h2>
+
+            <p>
+                A diferencia de otros proyectos académicos, este desarrollo nace de una necesidad real detectada por mí
+                mismo dentro de un entorno de trabajo existente. Mi objetivo es aplicar la tecnología para resolver
+                problemas cotidianos y mejorar procesos que actualmente consumen tiempo y recursos de forma
+                innecesaria.
+            </p>
+
+            <h2>Aprendizajes y objetivos</h2>
+
+            <p>
+                Este proyecto me está permitiendo profundizar en desarrollo Full Stack, diseño de interfaces, bases de
+                datos, automatización de procesos e integración de Inteligencia Artificial. Además, representa una
+                oportunidad para desarrollar una herramienta con impacto real mientras continúo ampliando mis
+                conocimientos técnicos.
+            </p>
+
+            <h2>Galería del proyecto</h2>
+
+            <div class="project-gallery">
+                <!-- Añade imágenes y videos de la galería aquí -->
+                <img src="assets/proyectos/almacendigital_tabla/imagen6.png" alt="Galería proyecto 1" class="gallery-item">
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="contact-box">
+
+        <h2>Contacto</h2>
+
+        <p>
+            Si te interesa conocer más sobre este proyecto o quieres contactar conmigo,
+            puedes hacerlo a través de cualquiera de los siguientes medios.
+        </p>
+
+        <div class="email-display">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:manuel.benavente.carrillo@gmail.com">
+                manuel.benavente.carrillo@gmail.com
+            </a>
+        </div>
+
+        <div class="email-display">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Madrid, España</span>
+        </div>
+
+        <div class="email-display">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/manuelbenaventecarrillo" target="_blank">
+                github.com/manuelbenaventecarrillo
+            </a>
+        </div>
+
+        <div class="email-display">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/manuelbenaventecarrillo" target="_blank">
+                linkedin.com/in/manuelbenaventecarrillo
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Manuel Benavente · Portfolio Profesional</p>
+    </footer>
+
+    <!-- MODAL LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <button id="close-lightbox" class="close-btn">✕</button>
+        <img id="lightbox-image" src="" alt="Imagen ampliada">
+    </div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const closeBtn = document.getElementById('close-lightbox');
+
+// Tema claro/oscuro
+if(localStorage.getItem('theme') === 'light'){
+    document.body.classList.add('light-mode');
+    toggleBtn.textContent = '☀️';
+}
+
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+
+    if(document.body.classList.contains('light-mode')){
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '🌙';
+    }
+});
+
+// Lightbox para TODAS las imágenes
+const allImages = document.querySelectorAll('img:not(#lightbox-image)');
+
+allImages.forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+        lightboxImage.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if(e.target === lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Cerrar con tecla Escape
+document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
+
+</body>
+
+</html>
