@@ -67,37 +67,6 @@ h2 {
     font-weight: 500;
 }
 
-.hero-description {
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.8;
-    color: #cbd5e1;
-}
-
-.buttons {
-    margin-top: 35px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.buttons a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: white;
-    background: #2563eb;
-    padding: 14px 24px;
-    border-radius: 12px;
-    transition: .3s;
-}
-
-.buttons a:hover {
-    transform: translateY(-3px);
-    background: #3b82f6;
-}
 
 section {
     max-width: 1200px;
@@ -222,6 +191,7 @@ footer {
     padding: 40px;
     background: #020617;
     color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .availability {
@@ -272,15 +242,7 @@ footer {
 }
 
 /* texto separado del icono */
-.email-text {
-    position: absolute;
-    left: 70px;
-    /* 👈 separa el texto del círculo */
-    white-space: nowrap;
 
-    font-size: 0.95rem;
-    color: white;
-}
 
 /* hover igual */
 .social-icons a:hover {
@@ -448,60 +410,16 @@ footer {
     color: #60a5fa;
 }
 
-/* BOTÓN */
-.contact-button {
-    display: inline-block;
-    padding: 12px 20px;
-
-    background: #2563eb;
-    color: white;
-
-    text-decoration: none;
-    border-radius: 30px;
-
-    font-size: 16px;
-    font-weight: 500;
-
-    transition: 0.3s;
-}
-
-.contact-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(37, 99, 235, .5);
-}
+/* .contact-button removed (not used in index.html) */
 
 footer {
     text-align: center;
-    padding: 25px 15px;
-    color: #aaa;
-    font-size: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin-top: 50px;
+    padding: 40px;
+    background: #020617;
+    color: #94a3b8;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.footer-links a:hover {
-    color: #2563eb;
-}
-
-.footer-links span {
-    color: #888;
-}
+/* .footer-links removed as not used in index.html */
 
 /* ========================= */
 /* RESPONSIVE MOVIL Y TABLET */
@@ -540,9 +458,7 @@ footer {
         font-size: 1.3rem;
     }
 
-    .hero-description {
-        margin: 0 auto;
-    }
+    /* .hero-description removed (not used in index.html) */
 
     /* Formación */
     .formacion-layout {
@@ -581,17 +497,7 @@ footer {
         flex-wrap: wrap;
     }
 
-    /* Botones principales */
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .buttons a {
-        width: 100%;
-        max-width: 320px;
-        justify-content: center;
-    }
+    /* .buttons responsive rules removed (not used in index.html) */
 
     /* Contacto */
     .email-display {
@@ -667,9 +573,13 @@ body.light-mode p,
 body.light-mode span,
 body.light-mode .timeline-content p,
 body.light-mode .timeline-content span,
-body.light-mode .hero-description,
 body.light-mode .formacion-texto {
     color: #334155;
+}
+
+/* Make project card titles readable in light mode */
+body.light-mode .project-card h4 {
+    color: #0f172a;
 }
 
 body.light-mode .skills span,
@@ -686,6 +596,7 @@ body.light-mode .social-icons a {
 body.light-mode footer {
     background: #e2e8f0;
     color: #334155;
+    border-top: 1px solid rgba(0,0,0,0.08);
 }
 
 body.light-mode .timeline {

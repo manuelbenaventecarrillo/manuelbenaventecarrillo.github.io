@@ -13,9 +13,9 @@
 </head>
 
 <body>
-<button id="theme-toggle" aria-label="Cambiar tema">
-    🌙
-</button>
+    <button id="theme-toggle" aria-label="Cambiar tema">
+        🌙
+    </button>
     <div class="container">
 
         <a href="index.html" class="back-button">← Volver al portfolio</a>
@@ -23,7 +23,8 @@
         <div class="card">
 
             <h1>Almacén Digital LaTabla</h1>
-            <img src="assets/proyectos/almacendigital_tabla/proyecto_almacendigital_latabla.png" class="hero-project-image">
+            <img src="assets/proyectos/almacendigital_tabla/proyecto_almacendigital_latabla.png"
+                class="hero-project-image">
 
             <p>
                 El Almacén Digital de LaTabla es un proyecto personal desarrollado por iniciativa propia con el objetivo
@@ -46,14 +47,16 @@
                     <h2>Funcionalidades principales</h2>
 
                     <ul>
-                        <li>Gestión digital de inventario y stock.</li>
-                        <li>Control de entradas y salidas de productos.</li>
-                        <li>Registro de movimientos de almacén.</li>
+                        <li>Control de inventario y stock en tiempo real.</li>
+                        <li>Registro de entradas y salidas de productos.</li>
+                        <li>Gestión de productos, categorías y proveedores.</li>
+                        <li>Control de ventas y movimientos del almacén.</li>
                         <li>Base de datos centralizada.</li>
-                        <li>Consultas mediante texto y voz.</li>
-                        <li>Asistente conversacional con Inteligencia Artificial.</li>
-                        <li>Paneles de análisis y seguimiento de información.</li>
-                        <li>Optimización de procesos internos del negocio.</li>
+                        <li>Consultas rápidas de stock y productos.</li>
+                        <li>Panel de administración del sistema.</li>
+                        <li>Historial de movimientos y trazabilidad.</li>
+                        <li>Análisis de datos mediante Inteligencia Artificial.</li>
+                        <li>Chat con Inteligencia Artificial integrado.</li>
                     </ul>
 
                 </div>
@@ -70,17 +73,19 @@
             <h2>Tecnologías utilizadas</h2>
 
             <p>
-                JavaScript, HTML, CSS, SQL, Inteligencia Artificial, Chat IA, bases de datos, UI/UX y herramientas de
-                desarrollo asistidas por IA como Lovable.
+                HTML, CSS, JavaScript, Node.js, SQL, bases de datos relacionales (PostgreSQL / MySQL), JSON, diseño
+                UI/UX, arquitectura de aplicaciones web, control de versiones con Git y GitHub, uso de Lovable como
+                herramienta de desarrollo asistido, e integración de Inteligencia Artificial para análisis de datos,
+                gestión de inventario y chat inteligente de asistencia.
             </p>
 
             <h2>Motivación del proyecto</h2>
 
             <p>
-                A diferencia de otros proyectos académicos, este desarrollo nace de una necesidad real detectada por mí
-                mismo dentro de un entorno de trabajo existente. Mi objetivo es aplicar la tecnología para resolver
-                problemas cotidianos y mejorar procesos que actualmente consumen tiempo y recursos de forma
-                innecesaria.
+                A diferencia de otros proyectos personales, este desarrollo nace de una necesidad real detectada dentro
+                de un entorno de trabajo existente. El objetivo es aplicar la tecnología para resolver problemas
+                cotidianos y optimizar procesos que actualmente consumen tiempo y recursos de forma innecesaria,
+                mejorando la eficiencia operativa del negocio.
             </p>
 
             <h2>Aprendizajes y objetivos</h2>
@@ -88,15 +93,16 @@
             <p>
                 Este proyecto me está permitiendo profundizar en desarrollo Full Stack, diseño de interfaces, bases de
                 datos, automatización de procesos e integración de Inteligencia Artificial. Además, representa una
-                oportunidad para desarrollar una herramienta con impacto real mientras continúo ampliando mis
-                conocimientos técnicos.
+                oportunidad para construir una herramienta con impacto real, aplicando conocimientos técnicos en un
+                entorno práctico mientras continúo ampliando mis competencias como desarrollador.
             </p>
 
             <h2>Galería del proyecto</h2>
 
             <div class="project-gallery">
                 <!-- Añade imágenes y videos de la galería aquí -->
-                <img src="assets/proyectos/almacendigital_tabla/imagen6.png" alt="Galería proyecto 1" class="gallery-item">
+                <img src="assets/proyectos/almacendigital_tabla/imagen6.png" alt="Galería proyecto 1"
+                    class="gallery-item">
             </div>
 
         </div>
@@ -150,62 +156,62 @@
         <img id="lightbox-image" src="" alt="Imagen ampliada">
     </div>
 
-<script>
-const toggleBtn = document.getElementById('theme-toggle');
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightbox-image');
-const closeBtn = document.getElementById('close-lightbox');
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeBtn = document.getElementById('close-lightbox');
 
-// Tema claro/oscuro
-if(localStorage.getItem('theme') === 'light'){
-    document.body.classList.add('light-mode');
-    toggleBtn.textContent = '☀️';
-}
+        // Tema claro/oscuro
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            toggleBtn.textContent = '☀️';
+        }
 
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
 
-    if(document.body.classList.contains('light-mode')){
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '☀️';
-    } else {
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '🌙';
-    }
-});
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '🌙';
+            }
+        });
 
-// Lightbox para TODAS las imágenes
-const allImages = document.querySelectorAll('img:not(#lightbox-image)');
+        // Lightbox para TODAS las imágenes
+        const allImages = document.querySelectorAll('img:not(#lightbox-image)');
 
-allImages.forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
-        lightboxImage.src = img.src;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-});
+        allImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', (e) => {
+                lightboxImage.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
 
-closeBtn.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
 
-lightbox.addEventListener('click', (e) => {
-    if(e.target === lightbox) {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
-// Cerrar con tecla Escape
-document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && lightbox.classList.contains('active')) {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
-</script>
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
 </body>
 
