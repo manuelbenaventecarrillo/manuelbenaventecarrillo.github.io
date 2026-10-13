@@ -1,0 +1,28 @@
+.contact-intro {
+    background: var(--anthracite);
+    color: var(--cream);
+    padding: clamp(2rem, 5vw, 4rem);
+}
+
+.contact-intro .eyebrow,
+.contact-intro em {
+    color: var(--cream);
+}
+
+.contact-intro .lead {
+    color: var(--cream);
+}
+
+.contact-logo {
+    background: #394030;
+}
+
+.contact-logo img {
+    mix-blend-mode: normal;
+}
+
+@media (max-width: 640px) {
+    .contact-intro {
+        padding: 1.5rem;
+    }
+}
